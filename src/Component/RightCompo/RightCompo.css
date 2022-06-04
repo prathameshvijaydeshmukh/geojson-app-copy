@@ -1,0 +1,27 @@
+.card {
+  border: none;
+  height: 600px;
+  width: 450px;
+}
+
+.btn-json {
+  border: none;
+}
+
+.btn-table {
+  border: none;
+}
+
+.btn-help {
+  border: none;
+}
+
+.button-edit {
+  height: 38px;
+  border-radius: 0px;
+}
+
+.button-edit:hover {
+  color: #fff;
+  background: #34495e;
+}
