@@ -50,9 +50,8 @@
   will-change: transform;
 }
 
-.btn-size {
+.top-left {
   width: 450px;
-  background-color: #fff;
 }
 
 .unsaved-edit {
@@ -70,4 +69,8 @@
 .btn-edit {
   border-radius: 0;
   padding: 7px;
+}
+
+.edit-width {
+  width: 146px;
 }

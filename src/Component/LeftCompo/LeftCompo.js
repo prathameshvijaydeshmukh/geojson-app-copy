@@ -4,17 +4,17 @@ function LeftCompo() {
   return (
     <>
       <div className="d-flex">
-        <div className="dropdown ">
-          <button className="dropbtn btn btn-edit">Open</button>
-          <div className="dropdown-content edit-width">
+        <div className="dropdown">
+          <button className="dropbtn btn btn-edit shadow-none">Open</button>
+          <div className="dropdown-content">
             <a href="#">File</a>
             <a href="#">GitHub</a>
             <a href="#">Gist</a>
           </div>
         </div>
         <div className="dropdown ">
-          <button className="dropbtn btn btn-edit">Save</button>
-          <div className="dropdown-content edit-width-2">
+          <button className="dropbtn btn btn-edit shadow-none">Save</button>
+          <div className="dropdown-content">
             <a href="#"> GitHub</a>
             <a href="#"> GeoJSON</a>
             <a href="#"> TopoJSON</a>
@@ -26,16 +26,16 @@ function LeftCompo() {
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn btn btn-edit">New</button>
+          <button className="dropbtn btn btn-edit shadow-none">New</button>
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn btn btn-edit">Share</button>
+          <button className="dropbtn btn btn-edit shadow-none">Share</button>
         </div>
 
         <div class="dropdown dropdown-edit">
-          <button className="dropbtn btn btn-edit">Meta</button>
-          <div className="dropdown-content edit-width-3">
+          <button className="dropbtn btn btn-edit shadow-none">Meta</button>
+          <div className="dropdown-content edit-width">
             <a href="#"> WKT</a>
             <a href="#">Add map layer</a>
             <a href="#"> Zoom to features1</a>
@@ -47,11 +47,8 @@ function LeftCompo() {
         </div>
 
         <div className="dropdown ">
-          <button className="dropbtn bg-white text-primary bg-white btn btn-edit unsaved-edit">
-            <span
-              className="iconify text-primary"
-              data-icon="akar-icons:file"
-            ></span>
+          <button className="dropbtn bg-white text-secondary bg-white btn btn-edit unsaved-edit shadow-none">
+            <i className="fa fa-file mr-2 font-weight-light text-primary"></i>
             unsaved
           </button>
         </div>

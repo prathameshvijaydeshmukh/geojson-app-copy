@@ -1,6 +1,6 @@
-.card {
+.card-edit {
   border: none;
-  height: 600px;
+  height: 598px;
   width: 450px;
 }
 
@@ -24,4 +24,23 @@
 .button-edit:hover {
   color: #fff;
   background: #34495e;
+}
+
+.top-right {
+  width: 531px;
+}
+
+.side {
+  width: 237px;
+}
+
+.bg-color {
+  background-color: #eee;
+  height: 40px;
+}
+
+.btn-change {
+  width: 254px;
+  margin-left: 20px;
+  margin-top: -54px;
 }
