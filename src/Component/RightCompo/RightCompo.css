@@ -1,6 +1,6 @@
 .card-edit {
   border: none;
-  height: 598px;
+  height: 667px;
   width: 450px;
 }
 
@@ -21,7 +21,21 @@
   border-radius: 0px;
 }
 
-.button-edit:hover {
+/* .button-edit:hover {
+  color: #fff;
+  background: #34495e;
+} */
+.buttton-edit {
+  color: #fff;
+  background: #34495e;
+}
+
+.btn.active {
+  color: #fff;
+  background: #34495e;
+}
+
+.buttton-edit.active {
   color: #fff;
   background: #34495e;
 }
@@ -42,5 +56,13 @@
 .btn-change {
   width: 254px;
   margin-left: 20px;
-  margin-top: -54px;
+  margin-top: -56px;
+  height: 40px;
+}
+
+.tab-edit {
+  margin-left: 19px;
+  width: 496px;
+  height: 667px;
+  overflow-y: scroll;
 }
