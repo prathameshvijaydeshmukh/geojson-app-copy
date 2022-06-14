@@ -1,16 +1,30 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./App.css";
 import LeftCompo from "./Component/LeftCompo/LeftCompo";
 import RightCompo from "./Component/RightCompo/RightCompo";
+import MapCompo from "./Component/MapCompo/MapCompo";
+import "leaflet/dist/leaflet.css";
+import { useState } from "react";
 
 function App() {
+  const [jsonData, setJsonData] = useState("");
+  // converting input-string to object
+  let jsonDataObj = {};
+
+  if (jsonData) {
+    console.log(jsonData);
+    jsonDataObj = JSON.parse(jsonData);
+    console.log(jsonDataObj);
+  }
   return (
     <div className="main-page">
-      <div className="d-flex  justify-content-between">
+      <div>
         <LeftCompo />
-        <RightCompo />
+        <RightCompo setJsonData={setJsonData} />
       </div>
+      <MapCompo jsonDataObj={jsonDataObj} />
     </div>
+
+    //
   );
 }
 

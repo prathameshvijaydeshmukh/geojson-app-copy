@@ -1,16 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./RightCompo.css";
 
-function RightCompo() {
+function RightCompo({ setJsonData }) {
+  function getJsonData(event) {
+    setJsonData(event.target.value);
+    // console.log(event.target.value);
+  }
+
   return (
-    <div class=" bg-white top-right">
+    <div className=" bg-white top-right right-compo">
       <div>
         <div className="d-flex justify-content-between bg-color">
           <div className="bg-white">
             <button
               className="btn shadow-none"
               data-toggle="collapse"
-              data-target="#collapseExample"
+              data-target="#"
               aria-expanded="false"
               aria-controls="collapseExample"
             >
@@ -24,17 +29,17 @@ function RightCompo() {
           </div>
         </div>
 
-        <div className="collapse" id="collapseExample">
+        <div className="collapse show" id="collapseExample">
           <div className="card-edit card-body">
             {/* buttons JSON,TABLE,HELP */}
             <ul
-              class="nav nav-pills btn-change bg-white"
+              className="nav nav-pills btn-change bg-white"
               id="pills-tab"
               role="tablist"
             >
-              <li class="nav-item" role="presentation">
+              <li className="nav-item" role="presentation">
                 <button
-                  class="active btn button-edit shadow-none"
+                  className="active btn button-edit shadow-none"
                   id="pills-home-tab"
                   data-bs-toggle="pill"
                   data-bs-target="#pills-home"
@@ -47,9 +52,9 @@ function RightCompo() {
                   JSON
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <li className="nav-item" role="presentation">
                 <button
-                  class="btn button-edit shadow-none"
+                  className="btn button-edit shadow-none"
                   id="pills-profile-tab"
                   data-bs-toggle="pill"
                   data-bs-target="#pills-profile"
@@ -62,9 +67,9 @@ function RightCompo() {
                   Table
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <li className="nav-item" role="presentation">
                 <button
-                  class="btn button-edit shadow-none"
+                  className="btn button-edit shadow-none"
                   id="pills-contact-tab"
                   data-bs-toggle="pill"
                   data-bs-target="#pills-contact"
@@ -78,17 +83,33 @@ function RightCompo() {
               </li>
             </ul>
             {/* button-content */}
-            <div class="tab-content tab-edit p-2" id="pills-tabContent">
+            <div className="tab-content tab-edit p-2" id="pills-tabContent">
               <div
-                class="tab-pane fade show active"
+                className="tab-pane fade show active"
                 id="pills-home"
                 role="tabpanel"
                 aria-labelledby="pills-home-tab"
               >
-                <span>prathamesh</span>
+                {/* <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text"></span>
+                  </div> */}
+                <textarea
+                  className="form-control form-edit"
+                  aria-label="With textarea"
+                  rows="26"
+                  cols="400"
+                  placeholder={`{
+                    "type": "FeatureCollection",
+                    "features": []
+                  }`}
+                  onChange={getJsonData}
+                ></textarea>
+
+                {/* </div> */}
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-profile"
                 role="tabpanel"
                 aria-labelledby="pills-profile-tab"
@@ -96,13 +117,13 @@ function RightCompo() {
                 <span>prathamesh</span>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-contact"
                 role="tabpanel"
                 aria-labelledby="pills-contact-tab"
               >
                 {/* help-content */}
-                <div class="pad2 prose">
+                <div className="pad2 prose">
                   <h2>Help</h2>
                   <p>
                     New here? <strong>geojson.io</strong> is a quick, simple
@@ -362,7 +383,7 @@ function RightCompo() {
                     to do advanced stuff like selecting a feature with its id:
                   </p>
                   <pre>
-                    <code class="lang-js">
+                    <code className="lang-js">
                       var layers = []; window.api.mapLayer.eachLayer();
                       layers.find(l =&gt; l.feature.id == 'a').openPopup();
                     </code>
@@ -398,7 +419,7 @@ function RightCompo() {
                     CLI, which will download the script and evaluate it.
                   </p>
                   <pre>
-                    <code class="lang-js">
+                    <code className="lang-js">
                       fetch('https://npmcdn.com/@turf/turf@3.1.1/turf.js').then(t
                       =&gt; t.text()).then(eval)
                     </code>
