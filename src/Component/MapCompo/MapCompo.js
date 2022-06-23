@@ -1,15 +1,15 @@
 import React from "react";
+
 import {
-  CircleMarker,
   MapContainer,
   Marker,
   Polygon,
-  Polyline,
   Popup,
-  Rectangle,
   TileLayer,
   ZoomControl,
+  GeoJSON,
 } from "react-leaflet";
+import hash from "object-hash";
 
 import "./MapCompo.css";
 
@@ -93,26 +93,29 @@ function MapCompo({ jsonDataObj }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <ZoomControl position="bottomright" zoomInText="+" zoomOutText="-" />
+      {/* <ZoomControl position="bottomright" zoomInText="+" zoomOutText="-" />
       {newarray.map((info) => (
-        <Newcompo info={info} />
-      ))}
+        <Newcompo info={info} /> */}
+      <ZoomControl position="bottomright" zoomInText="+" zoomOutText="-" />
+      {jsonDataObj.features && jsonDataObj.features.length > 0 && (
+        <GeoJSON key={hash(jsonDataObj)} data={jsonDataObj} />
+      )}
     </MapContainer>
   );
 }
 
 export default MapCompo;
 
-function Newcompo({ info }) {
-  console.log(info);
+// function Newcompo({ info }) {
+//   console.log(info);
 
-  if (info.geometry.type === "Point") {
-    <Marker position={info.geometry.coordinates}>
-      <Popup>point</Popup>
-    </Marker>;
-  } else if (info.geometry.type === "LineString") {
-    <lineString positions={info.geometry.coordinates}></lineString>;
-  } else {
-    <Polygon positions={info.geometry.coordinates}></Polygon>;
-  }
-}
+//   if (info.geometry.type === "Point") {
+//     <Marker position={info.geometry.coordinates}>
+//       <Popup>point</Popup>
+//     </Marker>;
+//   } else if (info.geometry.type === "LineString") {
+//     <lineString positions={info.geometry.coordinates}></lineString>;
+//   } else {
+//     <Polygon positions={info.geometry.coordinates}></Polygon>;
+//   }
+// }
